@@ -1,0 +1,6 @@
+
+@host=localhost:3000
+
+GET http://{{host}}/api/seed
+
+###

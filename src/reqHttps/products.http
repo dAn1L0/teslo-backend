@@ -1,0 +1,61 @@
+
+@host=localhost:3000
+
+# to delete an update
+@id=5a81667a-e22d-4c96-aaac-58ea9c6a1f0f
+
+# to search
+@term=danilos_20_pants
+
+###
+
+GET http://{{host}}/api/products
+
+###
+
+GET http://{{host}}/api/products
+    ?limit=10
+    &offset=0
+
+###
+
+GET http://{{host}}/api/products/{{term}}
+
+###
+
+POST http://{{host}}/api/products
+content-Type: application/json
+
+{
+  "title": "danilo's 33 pants",
+  "sizes": ["S","M"],
+  "gender": "men",
+  "price": 100.34,
+  "images": [
+    "http://imagen.png",
+    "http://imagen2.png"
+  ]
+}
+
+###
+
+PATCH http://{{host}}/api/products/{{id}}
+content-Type: application/json
+
+{
+  "price": 900.00,
+  "images": [
+    "https://imagen3.png",
+    "https://imagen4.png",
+    "https://imagen5.png",
+    "https://imagen6.png",
+    "https://imagen7.png",
+    "https://imagen8.png"
+  ]
+}
+
+###
+
+DELETE  http://{{host}}/api/products/{{id}}
+
+###
