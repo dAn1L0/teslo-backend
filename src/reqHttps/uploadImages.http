@@ -1,0 +1,15 @@
+
+@host=localhost:3000
+
+POST http://{{host}}/api/files/product
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="donVilla.png"
+Content-Type: image/png
+
+# < /home/danilo/xDev/NestJs/donVilla.png
+< /home/danilo/xDev/NestJs/nest-cheatsheet.pdf
+--boundary--
+
+###
