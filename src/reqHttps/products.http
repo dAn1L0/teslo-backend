@@ -2,7 +2,7 @@
 @host=localhost:3000
 
 # to delete an update
-@id=5a81667a-e22d-4c96-aaac-58ea9c6a1f0f
+@id=df394065-574c-464f-90d4-72a4398fa8c5
 
 # to search
 @term=danilos_20_pants
@@ -25,15 +25,16 @@ GET http://{{host}}/api/products/{{term}}
 
 POST http://{{host}}/api/products
 content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjYWU2MWM3LTcxMWMtNDE1Yy05NjU0LWRjZWI3Nzg1MTk4OCIsImlhdCI6MTcxOTg1NzU2NiwiZXhwIjoxNzE5ODY0NzY2fQ.Nm9JrEo05iN2exfu0owkvYgJVVWOek9qNuVTLPP7Axk
 
 {
-  "title": "danilo's 33 pants",
+  "title": "danilo's 23 pants",
   "sizes": ["S","M"],
   "gender": "men",
   "price": 100.34,
   "images": [
-    "http://imagen.png",
-    "http://imagen2.png"
+    "http://imagen3.png",
+    "http://imagen4.png"
   ]
 }
 
@@ -41,6 +42,7 @@ content-Type: application/json
 
 PATCH http://{{host}}/api/products/{{id}}
 content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjYWU2MWM3LTcxMWMtNDE1Yy05NjU0LWRjZWI3Nzg1MTk4OCIsImlhdCI6MTcxOTg1NzU2NiwiZXhwIjoxNzE5ODY0NzY2fQ.Nm9JrEo05iN2exfu0owkvYgJVVWOek9qNuVTLPP7Axk
 
 {
   "price": 900.00,
@@ -57,5 +59,5 @@ content-Type: application/json
 ###
 
 DELETE  http://{{host}}/api/products/{{id}}
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjYWU2MWM3LTcxMWMtNDE1Yy05NjU0LWRjZWI3Nzg1MTk4OCIsImlhdCI6MTcxOTg1NzU2NiwiZXhwIjoxNzE5ODY0NzY2fQ.Nm9JrEo05iN2exfu0owkvYgJVVWOek9qNuVTLPP7Axk
 ###

@@ -1,0 +1,33 @@
+
+@host=localhost:3000
+
+###
+
+POST http://{{host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Ma Chávez",
+  "email": "ma@google.com",
+  "password": "123456Da"
+}
+
+###
+POST http://{{host}}/api/auth/login
+content-Type: application/json
+
+{
+  "email": "danilo@google.com",
+  "password": "123456Da"
+}
+
+###
+GET http://{{host}}/api/auth/private3
+content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwZTI2OTE5LTdmNzItNDhjYy04YWZhLTFhN2U4ZTZkOTY4NiIsImlhdCI6MTcxOTg4MjkwNCwiZXhwIjoxNzE5ODkwMTA0fQ.dIbSiQz5tpRahzv2H9dh7rbQNR1zYq6ImjNxnn3a2po
+
+###
+GET http://{{host}}/api/auth/check-status
+content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQwZTI2OTE5LTdmNzItNDhjYy04YWZhLTFhN2U4ZTZkOTY4NiIsImlhdCI6MTcxOTg4MjkwNCwiZXhwIjoxNzE5ODkwMTA0fQ.dIbSiQz5tpRahzv2H9dh7rbQNR1zYq6ImjNxnn3a2po
+
