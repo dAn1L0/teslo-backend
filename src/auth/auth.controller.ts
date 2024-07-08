@@ -6,16 +6,23 @@ import { Auth, GetUser, RawHeaders, RoleProtected } from './decorators';
 import { User } from './entities/auth.entity';
 import { UserRoleGuard } from './guards/user-role/user-role.guard';
 import { ValidRoles } from './interfaces';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+
+@ApiTags('Auth')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
+  @ApiResponse({ status: 200, description: 'Ok', type: User })
+  @ApiResponse({ status: 500, description: 'Internal server error' })
   @Post('register')
   createUser(@Body() createUserDto: CreateUserDto) {
     return this.authService.create(createUserDto);
   }
 
+  @ApiResponse({ status: 200, description: 'Ok' })
+  @ApiResponse({ status: 500, description: 'Internal server error' })
   @Post('login')
   loginUser(@Body() loginUserDto: LoginUserDto) {
     return this.authService.login(loginUserDto);
@@ -29,7 +36,7 @@ export class AuthController {
     return this.authService.checkAuthStatus(user);
   }
 
-  @Get('private')
+  // @Get('private')
   @UseGuards( AuthGuard() )
   testingPrivateRoute(
     @Req() request: Express.Request,
@@ -48,7 +55,7 @@ export class AuthController {
   }
   // @SetMetadata('roles', ['admin', 'super-user'])
 
-  @Get('private2')
+  // @Get('private2')
   @RoleProtected( ValidRoles.admin )
   @UseGuards( AuthGuard(), UserRoleGuard )
   routeRoleProtected(
