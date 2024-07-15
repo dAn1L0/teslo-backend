@@ -12,12 +12,12 @@ Content-Type: application/json
   "password": "123456Da"
 }
 
-###
+### danilo@google.com o usuario2
 POST http://{{host}}/api/auth/login
 content-Type: application/json
 
 {
-  "email": "danilo@google.com",
+  "email": "usuario2@google.com",
   "password": "123456Da"
 }
 
